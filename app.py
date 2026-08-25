@@ -141,7 +141,7 @@ with st.sidebar:
     - **Embedding**: `all-MiniLM-L6-v2 (384d)`
     - **Vector DB**: `ChromaDB` (`energy_documents`)
     - **Indexed Chunks**: `100`
-    - **Primary LLM**: `Groq — llama-3.3-70b-versatile`
+    - **Primary LLM**: `Groq — openai/gpt-oss-120b`
     - **Fallback**: `OpenRouter`
     - **Data Scale**: `3.51M+ daily records`
     - **Households**: `5,566`
@@ -209,7 +209,7 @@ if (ask_btn or example_selected) and query_val:
                     answer_text = res.get("answer", "No answer generated.")
                     category = str(res.get("category", "UNKNOWN")).upper()
                     provider = res.get("provider", "Groq")
-                    model_name = res.get("model", "llama-3.3-70b-versatile")
+                    model_name = res.get("model", "openai/gpt-oss-120b")
                     latencies = res.get("latencies_ms", {})
                     sources = res.get("sources", {})
                     
