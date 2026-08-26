@@ -48,7 +48,7 @@ def answer(query: str) -> dict:
     # 2. Retrieve Document Context (if category is document or hybrid)
     if category in ["document", "hybrid"]:
         t_doc = time.time()
-        retrieved_chunks = retrieve(query, top_k=5)
+        retrieved_chunks = retrieve(query, top_k=15)
         doc_latency = round((time.time() - t_doc) * 1000, 2)
 
         doc_parts = []

@@ -23,7 +23,7 @@ def get_resources():
         _cached_collection = client.get_collection(name=COLLECTION_NAME)
     return _cached_model, _cached_collection
 
-def retrieve(query: str, top_k: int = 5):
+def retrieve(query: str, top_k: int = 15):
     """
     Accepts a user query, encodes it using SentenceTransformer, searches the persistent Chroma DB,
     and returns a list of top_k matched document chunks with similarity scores and metadata.

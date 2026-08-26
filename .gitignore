@@ -11,3 +11,8 @@ data/
 
 # ChromaDB generated files
 vector_db/
+
+# Frontend build & dependencies
+node_modules/
+dist/
+*.save
