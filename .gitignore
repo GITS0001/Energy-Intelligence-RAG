@@ -8,3 +8,6 @@ replacements.txt
 
 # Generated datasets and processed data
 data/
+
+# ChromaDB generated files
+vector_db/
