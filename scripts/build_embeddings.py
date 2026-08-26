@@ -10,8 +10,8 @@ PROJECT_ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 if PROJECT_ROOT not in sys.path:
     sys.path.insert(0, PROJECT_ROOT)
 
-INPUT_CHUNKS_FILE = os.path.join("data", "processed", "documents", "chunks.json")
-OUTPUT_EMBEDDINGS_FILE = os.path.join("data", "processed", "documents", "embeddings.pkl")
+INPUT_CHUNKS_FILE = os.path.join(PROJECT_ROOT, "data", "processed", "documents", "chunks.json")
+OUTPUT_EMBEDDINGS_FILE = os.path.join(PROJECT_ROOT, "data", "processed", "documents", "embeddings.pkl")
 MODEL_NAME = "sentence-transformers/all-MiniLM-L6-v2"
 
 def generate_and_save_embeddings():

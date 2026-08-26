@@ -8,18 +8,20 @@ PROJECT_ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 if PROJECT_ROOT not in sys.path:
     sys.path.insert(0, PROJECT_ROOT)
 
-VECTOR_DB_DIR = "vector_db"
+VECTOR_DB_DIR = os.path.join(PROJECT_ROOT, "vector_db")
 COLLECTION_NAME = "energy_documents"
 MODEL_NAME = "sentence-transformers/all-MiniLM-L6-v2"
 
-import streamlit as st
+_cached_model = None
+_cached_collection = None
 
-@st.cache_resource
 def get_resources():
-    model = SentenceTransformer(MODEL_NAME)
-    client = chromadb.PersistentClient(path=VECTOR_DB_DIR)
-    collection = client.get_collection(name=COLLECTION_NAME)
-    return model, collection
+    global _cached_model, _cached_collection
+    if _cached_model is None or _cached_collection is None:
+        _cached_model = SentenceTransformer(MODEL_NAME)
+        client = chromadb.PersistentClient(path=VECTOR_DB_DIR)
+        _cached_collection = client.get_collection(name=COLLECTION_NAME)
+    return _cached_model, _cached_collection
 
 def retrieve(query: str, top_k: int = 5):
     """

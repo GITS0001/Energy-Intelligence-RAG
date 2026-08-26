@@ -4,9 +4,10 @@ import pandas as pd
 import numpy as np
 
 # File Paths
-ANALYTICAL_CSV = "data/processed/tables/analytical_dataset.csv"
-HOLIDAYS_CSV = "data/raw/tabular/uk_bank_holidays.csv"
-METRICS_DIR = "data/processed/metrics"
+PROJECT_ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+ANALYTICAL_CSV = os.path.join(PROJECT_ROOT, "data", "processed", "tables", "analytical_dataset.csv")
+HOLIDAYS_CSV = os.path.join(PROJECT_ROOT, "data", "raw", "tabular", "uk_bank_holidays.csv")
+METRICS_DIR = os.path.join(PROJECT_ROOT, "data", "processed", "metrics")
 
 def get_season(month):
     if month in [12, 1, 2]:

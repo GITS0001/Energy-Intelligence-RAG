@@ -32,14 +32,17 @@ def call_groq(messages: list) -> str:
     api_key = os.getenv("GROQ_API_KEY")
     if not api_key:
         raise ValueError("GROQ_API_KEY is missing from environment.")
-    client = Groq(api_key=api_key, max_retries=0, timeout=5.0)
+    client = Groq(api_key=api_key, max_retries=0, timeout=12.0)
     response = client.chat.completions.create(
         model=GROQ_MODEL,
         messages=messages,
         temperature=0.1,
         max_tokens=1024
     )
-    return response.choices[0].message.content
+    content = response.choices[0].message.content
+    if (content is None or content.strip() == "") and hasattr(response.choices[0].message, "reasoning") and response.choices[0].message.reasoning:
+        content = response.choices[0].message.reasoning
+    return content or ""
 
 def call_openrouter(messages: list) -> str:
     api_key = os.getenv("OPENROUTER_API_KEY")

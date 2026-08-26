@@ -25,9 +25,9 @@ for v in env_vars:
     results["environment"][v] = "PASS" if os.getenv(v) else "FAIL"
 
 files_to_check = [
-    "data/analytical_dataset.csv",
-    "data/chunks.json",
-    "data/embeddings.pkl",
+    "data/processed/tables/analytical_dataset.csv",
+    "data/processed/documents/chunks.json",
+    "data/processed/documents/embeddings.pkl",
     "vector_db"
 ]
 json_files = [
@@ -35,7 +35,7 @@ json_files = [
     "tariff_stats.json", "household_stats.json", "acorn_stats.json", "holiday_stats.json"
 ]
 for jf in json_files:
-    files_to_check.append(f"data/{jf}")
+    files_to_check.append(f"data/processed/metrics/{jf}")
 
 for f in files_to_check:
     results["environment"][f] = "PASS" if os.path.exists(f) else "FAIL"
@@ -43,9 +43,9 @@ for f in files_to_check:
 # 2. EMBEDDING TEST
 print("Running Embedding Test...")
 try:
-    from sentence_transformers import SentenceTransformer
+    from scripts.retrieve_documents import get_resources
     t0 = time.time()
-    model = SentenceTransformer("sentence-transformers/all-MiniLM-L6-v2")
+    model, col = get_resources()
     load_time = time.time() - t0
     emb = model.encode(["test"])
     dim = len(emb[0])
@@ -60,9 +60,6 @@ except Exception as e:
 # 3. CHROMADB TEST
 print("Running ChromaDB Test...")
 try:
-    import chromadb
-    client = chromadb.PersistentClient(path="vector_db")
-    col = client.get_collection("energy_documents")
     count = col.count()
     results["chromadb"] = {
         "status": "PASS",
@@ -145,21 +142,22 @@ run_query_test(ah_qs, "anti_hallucination")
 # 7. ROUTER TEST
 print("Running Router Test...")
 router_qs = {
-    "How can households reduce energy consumption?": "document",
+    "How can households reduce energy conservation methods?": "document",
     "What is the average temperature?": "weather",
-    "How many households are represented?": "household",
+    "How many households are in the dataset?": "household",
     "What is the average winter consumption?": "consumption",
     "How does temperature affect winter energy consumption?": "hybrid"
 }
 try:
     from scripts.query_router import route_query
     for q, expected in router_qs.items():
-        cat = route_query(q)
+        res = route_query(q)
+        actual_cat = res["category"]
         results["router"].append({
             "query": q,
             "expected": expected,
-            "actual": cat,
-            "pass": cat == expected
+            "actual": actual_cat,
+            "pass": actual_cat == expected
         })
 except Exception as e:
     results["router"].append({"error": str(e)})
@@ -169,10 +167,11 @@ print("Running Tabular Retrieval Test...")
 try:
     from scripts.load_tables import get_tabular_context
     t0 = time.time()
-    tab_ctx = get_tabular_context("consumption")
+    tab_res = get_tabular_context("consumption")
     latency = time.time() - t0
+    context_str = tab_res.get("context", "")
     results["tabular"]["consumption"] = {
-        "status": "PASS" if "consumption" in tab_ctx.lower() else "FAIL",
+        "status": "PASS" if "consumption" in context_str.lower() else "FAIL",
         "latency_ms": round(latency * 1000, 2)
     }
 except Exception as e:

@@ -8,8 +8,8 @@ PROJECT_ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 if PROJECT_ROOT not in sys.path:
     sys.path.insert(0, PROJECT_ROOT)
 
-INPUT_EMBEDDINGS_FILE = os.path.join("data", "processed", "documents", "embeddings.pkl")
-VECTOR_DB_DIR = "vector_db"
+INPUT_EMBEDDINGS_FILE = os.path.join(PROJECT_ROOT, "data", "processed", "documents", "embeddings.pkl")
+VECTOR_DB_DIR = os.path.join(PROJECT_ROOT, "vector_db")
 COLLECTION_NAME = "energy_documents"
 
 def build_chroma_vector_db():

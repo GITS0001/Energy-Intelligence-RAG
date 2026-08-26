@@ -1,8 +1,13 @@
 import os
+import sys
 from langchain_community.document_loaders import PyPDFLoader, TextLoader
 from langchain_core.documents import Document
 
-DOCS_DIR = "data/raw/documents"
+PROJECT_ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+if PROJECT_ROOT not in sys.path:
+    sys.path.insert(0, PROJECT_ROOT)
+
+DOCS_DIR = os.path.join(PROJECT_ROOT, "data", "raw", "documents")
 
 def load_all_documents(docs_dir: str = DOCS_DIR):
     """

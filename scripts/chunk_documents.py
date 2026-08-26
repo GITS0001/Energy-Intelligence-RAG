@@ -15,7 +15,7 @@ except ModuleNotFoundError:
     from load_documents import load_all_documents
 
 # Directories
-PROCESSED_DOCS_DIR = "data/processed/documents"
+PROCESSED_DOCS_DIR = os.path.join(PROJECT_ROOT, "data", "processed", "documents")
 OUTPUT_CHUNKS_FILE = os.path.join(PROCESSED_DOCS_DIR, "chunks.json")
 
 # Chunking Strategy Configuration & Rationale:

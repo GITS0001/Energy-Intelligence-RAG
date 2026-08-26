@@ -166,7 +166,7 @@ report += f"""
 
 ## 10. LLM/Fallback Results
 - **Primary Provider**: Groq
-- **Primary Model**: llama-3.3-70b-versatile
+- **Primary Model**: openai/gpt-oss-120b
 - **Fallback Provider**: OpenRouter
 - **Fallback Model**: meta-llama/llama-3.3-70b-instruct
 - **Behavior observed**: Groq unavailable/rate-limited — OpenRouter fallback activated.

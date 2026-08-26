@@ -8,8 +8,8 @@ PROJECT_ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 if PROJECT_ROOT not in sys.path:
     sys.path.insert(0, PROJECT_ROOT)
 
-METRICS_DIR = os.path.join("data", "processed", "metrics")
-ANALYTICAL_CSV = os.path.join("data", "processed", "tables", "analytical_dataset.csv")
+METRICS_DIR = os.path.join(PROJECT_ROOT, "data", "processed", "metrics")
+ANALYTICAL_CSV = os.path.join(PROJECT_ROOT, "data", "processed", "tables", "analytical_dataset.csv")
 
 _metrics_cache = {}
 
@@ -41,38 +41,40 @@ def get_tabular_context(query: str) -> dict:
     # -------------------------------------------------------------
     # TIER 1: PRECOMPUTED METRICS LOOKUP
     # -------------------------------------------------------------
-    if any(kw in query_lower for kw in ["household", "tariff", "tou", "std", "acorn", "demographic", "cluster", "consumer"]):
+    matched_contexts.append("Dataset Scope: London Smart Meter Household Energy and Weather Dataset (Location: London, United Kingdom).")
+
+    if any(kw in query_lower for kw in ["household", "tariff", "tariffs", "tou", "std", "acorn", "demographic", "cluster", "consumer", "customer", "adversity", "affluent", "comfortable", "time-of-use", "standard"]):
         if "household_stats" in metrics:
-            matched_contexts.append(f"Household Statistics: {json.dumps(metrics['household_stats'])}")
+            matched_contexts.append(f"London Household & Demographic Statistics: {json.dumps(metrics['household_stats'])}")
             used_sources.append("household_stats.json")
-        if "tariff_stats" in metrics and any(kw in query_lower for kw in ["tariff", "tou", "std"]):
-            matched_contexts.append(f"Tariff Performance: {json.dumps(metrics['tariff_stats'])}")
+        if "tariff_stats" in metrics and any(kw in query_lower for kw in ["tariff", "tariffs", "tou", "std", "standard", "time-of-use", "time of use"]):
+            matched_contexts.append(f"London Tariff Performance (Std vs ToU): {json.dumps(metrics['tariff_stats'])}")
             used_sources.append("tariff_stats.json")
-        if "acorn_stats" in metrics and "acorn" in query_lower:
-            matched_contexts.append(f"ACORN Group Breakdown: {json.dumps(metrics['acorn_stats'])}")
+        if "acorn_stats" in metrics and any(kw in query_lower for kw in ["acorn", "demographic", "cluster", "adversity", "affluent", "comfortable"]):
+            matched_contexts.append(f"London ACORN Demographic Group Breakdown: {json.dumps(metrics['acorn_stats'])}")
             used_sources.append("acorn_stats.json")
 
-    if any(kw in query_lower for kw in ["weather", "temperature", "humidity", "rain", "wind", "cloud", "sun", "cold", "hot", "climate"]):
+    if any(kw in query_lower for kw in ["weather", "temperature", "temp", "humidity", "rain", "rainy", "wind", "cloud", "sun", "cold", "hot", "warm", "climate", "correlation", "precip"]):
         if "weather_stats" in metrics:
-            matched_contexts.append(f"Weather & Atmospheric Statistics: {json.dumps(metrics['weather_stats'])}")
+            matched_contexts.append(f"London Weather & Atmospheric Statistics (includes daily maximum temperature, minimum temperature, relative humidity, wind speed, and correlation between daily maximum temperature and energy consumption 'temp_energy_correlation'): {json.dumps(metrics['weather_stats'])}")
             used_sources.append("weather_stats.json")
 
-    if any(kw in query_lower for kw in ["season", "winter", "summer", "spring", "autumn", "month"]):
+    if any(kw in query_lower for kw in ["season", "seasonal", "winter", "summer", "spring", "autumn", "month"]):
         if "seasonal_stats" in metrics:
-            matched_contexts.append(f"Seasonal Consumption Metrics: {json.dumps(metrics['seasonal_stats'])}")
+            matched_contexts.append(f"London Seasonal Consumption & Temperature Metrics (Winter, Spring, Summer, Autumn): {json.dumps(metrics['seasonal_stats'])}")
             used_sources.append("seasonal_stats.json")
 
-    if any(kw in query_lower for kw in ["holiday", "bank holiday", "christmas", "easter", "new year"]):
+    if any(kw in query_lower for kw in ["holiday", "bank holiday", "christmas", "easter", "new year", "boxing day", "good friday", "jubilee"]):
         if "holiday_stats" in metrics:
-            matched_contexts.append(f"UK Bank Holiday Energy Dynamics: {json.dumps(metrics['holiday_stats'])}")
+            matched_contexts.append(f"UK Bank Holiday vs Regular Day Energy Dynamics & Specific Holidays: {json.dumps(metrics['holiday_stats'])}")
             used_sources.append("holiday_stats.json")
 
-    if any(kw in query_lower for kw in ["consumption", "kwh", "electricity", "power", "peak", "usage", "average energy", "max energy", "median"]):
+    if any(kw in query_lower for kw in ["consumption", "kwh", "electricity", "power", "peak", "usage", "average energy", "max energy", "min energy", "median", "energy", "percentile", "highest", "lowest", "daily energy", "aggregate"]):
         if "consumption_stats" in metrics:
-            matched_contexts.append(f"Citywide Consumption Metrics & Percentiles: {json.dumps(metrics['consumption_stats'])}")
+            matched_contexts.append(f"London Citywide Consumption Metrics & Percentiles: {json.dumps(metrics['consumption_stats'])}")
             used_sources.append("consumption_stats.json")
 
-    if matched_contexts:
+    if used_sources:
         return {
             "source": f"Precomputed Metrics ({', '.join(used_sources)})",
             "context": "\n".join(matched_contexts),
