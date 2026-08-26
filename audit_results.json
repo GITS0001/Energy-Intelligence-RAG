@@ -17,7 +17,7 @@
   "embedding": {
     "status": "PASS",
     "dimension": 384,
-    "load_time_ms": 6632.29
+    "load_time_ms": 5547.58
   },
   "chromadb": {
     "status": "PASS",
@@ -27,7 +27,7 @@
         "query": "energy conservation methods",
         "top_cosine": 0.5899,
         "avg_cosine": 0.5106,
-        "latency_ms": 2.19,
+        "latency_ms": 0.66,
         "top_chunk_id": "chunk_19",
         "top_source": "energy.pdf"
       },
@@ -35,7 +35,7 @@
         "query": "household demographics",
         "top_cosine": 0.2769,
         "avg_cosine": 0.2442,
-        "latency_ms": 0.72,
+        "latency_ms": 0.52,
         "top_chunk_id": "chunk_56",
         "top_source": "energy.pdf"
       },
@@ -43,7 +43,7 @@
         "query": "temperature effects",
         "top_cosine": 0.3619,
         "avg_cosine": 0.3126,
-        "latency_ms": 0.82,
+        "latency_ms": 0.49,
         "top_chunk_id": "chunk_5",
         "top_source": "energy.txt"
       },
@@ -51,7 +51,7 @@
         "query": "smart meters",
         "top_cosine": 0.5515,
         "avg_cosine": 0.3604,
-        "latency_ms": 0.45,
+        "latency_ms": 0.44,
         "top_chunk_id": "chunk_66",
         "top_source": "energy.pdf"
       },
@@ -69,55 +69,55 @@
     {
       "query": "What is the average energy consumption in winter?",
       "category": "consumption",
-      "answer": "The average daily energy consumption in winter is **\u2248\u202f11.99\u202fkWh** per household\u202fday\u3010London Seasonal Consumption & Temperature Metrics (Winter) \u2013 avg_daily_energy_kwh: 11.993218648009444\u3011.",
+      "answer": "The average daily energy consumption in winter is **approximately\u202f11.99\u202fkWh**\u3010London Seasonal Consumption & Temperature Metrics (Winter) \u2013 avg_daily_energy_kwh: 11.993218648009444\u3011.",
       "provider": "Groq",
       "model": "openai/gpt-oss-120b",
       "latencies_ms": {
         "router": 0.01,
         "document_retrieval": 0.0,
-        "tabular_retrieval": 0.92,
-        "llm_generation": 722.36,
-        "end_to_end": 723.29
+        "tabular_retrieval": 0.71,
+        "llm_generation": 701.95,
+        "end_to_end": 702.67
       },
       "sources": {
         "document_chunks_count": 0,
         "tabular_source": "Precomputed Metrics (seasonal_stats.json, consumption_stats.json)",
         "retrieved_chunks": []
       },
-      "actual_latency_ms": 723.31
+      "actual_latency_ms": 702.7
     },
     {
       "query": "What is the average energy consumption in summer?",
       "category": "consumption",
-      "answer": "The average daily energy consumption in summer is **approximately\u202f8.16\u202fkWh**\u3010London Seasonal Consumption & Temperature Metrics (Summer) \u2013 avg_daily_energy_kwh: 8.16304587818129\u3011.",
+      "answer": "The average daily energy consumption in summer is **approximately\u202f8.16\u202fkWh** per day\u3010London Seasonal Consumption & Temperature Metrics \u2013 Summer\u202f\u2192\u202favg_daily_energy_kwh:\u202f8.16304587818129\u3011.",
       "provider": "Groq",
       "model": "openai/gpt-oss-120b",
       "latencies_ms": {
-        "router": 0.04,
+        "router": 0.03,
         "document_retrieval": 0.0,
         "tabular_retrieval": 0.1,
-        "llm_generation": 705.52,
-        "end_to_end": 705.67
+        "llm_generation": 826.86,
+        "end_to_end": 827.01
       },
       "sources": {
         "document_chunks_count": 0,
         "tabular_source": "Precomputed Metrics (seasonal_stats.json, consumption_stats.json)",
         "retrieved_chunks": []
       },
-      "actual_latency_ms": 705.69
+      "actual_latency_ms": 827.03
     },
     {
       "query": "How does temperature affect energy consumption?",
       "category": "hybrid",
-      "answer": "The London dataset shows that daily temperature and household energy use are **negatively correlated**.  \nThe calculated correlation between daily maximum temperature and total energy consumption is **\u20110.1699** (\u2248\u202f\u20110.17)\u3010London Weather & Atmospheric Statistics\u3011.  \n\nThis value indicates a modest inverse relationship: on days with higher maximum temperatures, overall energy consumption tends to be slightly lower, while cooler days are associated with somewhat higher usage. The correlation is relatively weak, suggesting that temperature is only one of several factors influencing daily electricity demand.",
+      "answer": "The data show that daily maximum temperature and household energy use are **inversely related**, but only weakly.  \n- The calculated correlation between daily maximum temperature and total energy consumption is **\u20110.1699**\u3010London Weather & Atmospheric Statistics\u3011.  \n\nA negative correlation means that, on average, higher temperatures are associated with slightly lower energy consumption (likely because less heating is needed), while cooler days tend to see a modest increase in usage. However, the magnitude of \u20130.17 indicates that temperature explains only a small portion of the variation in energy demand.",
       "provider": "Groq",
       "model": "openai/gpt-oss-120b",
       "latencies_ms": {
         "router": 0.04,
-        "document_retrieval": 50.65,
-        "tabular_retrieval": 0.04,
-        "llm_generation": 946.4,
-        "end_to_end": 997.14
+        "document_retrieval": 46.09,
+        "tabular_retrieval": 0.06,
+        "llm_generation": 2963.56,
+        "end_to_end": 3009.77
       },
       "sources": {
         "document_chunks_count": 5,
@@ -129,18 +129,18 @@
             "similarity_score": 0.5258,
             "distance": 0.4742,
             "metadata": {
-              "creationdate": "2014-10-13T11:42:16+05:30",
-              "file_name": "energy.pdf",
-              "file_type": "pdf",
+              "producer": "Microsoft\u00ae Word 2010",
               "author": "IEEE",
-              "total_pages": 8,
-              "creator": "Microsoft\u00ae Word 2010",
-              "moddate": "2014-10-13T11:42:16+05:30",
-              "page_label": "3",
+              "creationdate": "2014-10-13T11:42:16+05:30",
               "title": "Paper Title (use style: paper title)",
+              "moddate": "2014-10-13T11:42:16+05:30",
+              "creator": "Microsoft\u00ae Word 2010",
               "page": 2,
+              "page_label": "3",
               "source": "data/raw/documents/energy.pdf",
-              "producer": "Microsoft\u00ae Word 2010"
+              "file_type": "pdf",
+              "total_pages": 8,
+              "file_name": "energy.pdf"
             }
           },
           {
@@ -149,18 +149,18 @@
             "similarity_score": 0.4852,
             "distance": 0.5148,
             "metadata": {
-              "source": "data/raw/documents/energy.pdf",
-              "page_label": "4",
               "producer": "Microsoft\u00ae Word 2010",
-              "title": "Paper Title (use style: paper title)",
+              "file_type": "pdf",
+              "page_label": "4",
+              "source": "data/raw/documents/energy.pdf",
+              "creator": "Microsoft\u00ae Word 2010",
               "page": 3,
               "author": "IEEE",
+              "title": "Paper Title (use style: paper title)",
               "total_pages": 8,
-              "creator": "Microsoft\u00ae Word 2010",
-              "file_name": "energy.pdf",
-              "file_type": "pdf",
               "creationdate": "2014-10-13T11:42:16+05:30",
-              "moddate": "2014-10-13T11:42:16+05:30"
+              "moddate": "2014-10-13T11:42:16+05:30",
+              "file_name": "energy.pdf"
             }
           },
           {
@@ -169,18 +169,18 @@
             "similarity_score": 0.4843,
             "distance": 0.5157,
             "metadata": {
-              "file_name": "energy.pdf",
-              "title": "Paper Title (use style: paper title)",
-              "total_pages": 8,
-              "page": 3,
-              "author": "IEEE",
-              "file_type": "pdf",
-              "producer": "Microsoft\u00ae Word 2010",
-              "page_label": "4",
-              "creator": "Microsoft\u00ae Word 2010",
-              "moddate": "2014-10-13T11:42:16+05:30",
+              "source": "data/raw/documents/energy.pdf",
               "creationdate": "2014-10-13T11:42:16+05:30",
-              "source": "data/raw/documents/energy.pdf"
+              "producer": "Microsoft\u00ae Word 2010",
+              "moddate": "2014-10-13T11:42:16+05:30",
+              "page_label": "4",
+              "page": 3,
+              "title": "Paper Title (use style: paper title)",
+              "creator": "Microsoft\u00ae Word 2010",
+              "file_type": "pdf",
+              "author": "IEEE",
+              "total_pages": 8,
+              "file_name": "energy.pdf"
             }
           },
           {
@@ -189,18 +189,18 @@
             "similarity_score": 0.4776,
             "distance": 0.5224,
             "metadata": {
-              "source": "data/raw/documents/energy.pdf",
+              "creationdate": "2014-10-13T11:42:16+05:30",
+              "producer": "Microsoft\u00ae Word 2010",
               "title": "Paper Title (use style: paper title)",
-              "moddate": "2014-10-13T11:42:16+05:30",
-              "creator": "Microsoft\u00ae Word 2010",
               "file_name": "energy.pdf",
               "page": 3,
-              "file_type": "pdf",
-              "producer": "Microsoft\u00ae Word 2010",
               "total_pages": 8,
-              "creationdate": "2014-10-13T11:42:16+05:30",
+              "page_label": "4",
+              "creator": "Microsoft\u00ae Word 2010",
+              "source": "data/raw/documents/energy.pdf",
               "author": "IEEE",
-              "page_label": "4"
+              "moddate": "2014-10-13T11:42:16+05:30",
+              "file_type": "pdf"
             }
           },
           {
@@ -209,78 +209,78 @@
             "similarity_score": 0.4759,
             "distance": 0.5241,
             "metadata": {
+              "creator": "Microsoft\u00ae Word 2010",
+              "moddate": "2014-10-13T11:42:16+05:30",
+              "author": "IEEE",
               "source": "data/raw/documents/energy.pdf",
+              "creationdate": "2014-10-13T11:42:16+05:30",
               "total_pages": 8,
               "file_type": "pdf",
-              "page_label": "1",
-              "author": "IEEE",
-              "producer": "Microsoft\u00ae Word 2010",
-              "creator": "Microsoft\u00ae Word 2010",
-              "creationdate": "2014-10-13T11:42:16+05:30",
-              "page": 0,
-              "moddate": "2014-10-13T11:42:16+05:30",
               "title": "Paper Title (use style: paper title)",
-              "file_name": "energy.pdf"
+              "page": 0,
+              "producer": "Microsoft\u00ae Word 2010",
+              "file_name": "energy.pdf",
+              "page_label": "1"
             }
           }
         ]
       },
-      "actual_latency_ms": 997.16
+      "actual_latency_ms": 3009.79
     },
     {
       "query": "Which season has the highest consumption?",
       "category": "consumption",
-      "answer": "Winter has the highest average daily energy consumption, with an average of\u202f11.99\u202fkWh per day\u202f\u3010London Seasonal Consumption & Temperature Metrics (Winter) \u2013 avg_daily_energy_kwh:\u202f11.993218648009444\u3011.",
-      "provider": "Groq",
-      "model": "openai/gpt-oss-120b",
-      "latencies_ms": {
-        "router": 0.03,
-        "document_retrieval": 0.0,
-        "tabular_retrieval": 0.09,
-        "llm_generation": 844.02,
-        "end_to_end": 844.14
-      },
-      "sources": {
-        "document_chunks_count": 0,
-        "tabular_source": "Precomputed Metrics (seasonal_stats.json, consumption_stats.json)",
-        "retrieved_chunks": []
-      },
-      "actual_latency_ms": 844.15
-    },
-    {
-      "query": "What is the temperature-energy correlation?",
-      "category": "weather",
-      "answer": "The temperature\u2011energy correlation in the London dataset is **\u20110.16989304196487576**\u3010London Weather & Atmospheric Statistics (includes \u2026 \u201ctemp_energy_correlation\u201d): -0.16989304196487576\u3011.",
+      "answer": "Winter has the highest average daily energy consumption, with an average of\u202f11.99\u202fkWh per day\u202f\u3010London Seasonal Consumption & Temperature Metrics (Winter) \u2013 avg_daily_energy_kwh: 11.993218648009444\u3011.",
       "provider": "Groq",
       "model": "openai/gpt-oss-120b",
       "latencies_ms": {
         "router": 0.05,
         "document_retrieval": 0.0,
         "tabular_retrieval": 0.17,
-        "llm_generation": 1085.61,
-        "end_to_end": 1085.84
+        "llm_generation": 943.83,
+        "end_to_end": 944.05
+      },
+      "sources": {
+        "document_chunks_count": 0,
+        "tabular_source": "Precomputed Metrics (seasonal_stats.json, consumption_stats.json)",
+        "retrieved_chunks": []
+      },
+      "actual_latency_ms": 944.07
+    },
+    {
+      "query": "What is the temperature-energy correlation?",
+      "category": "weather",
+      "answer": "The temperature\u2011energy correlation in the London dataset is **\u20110.16989304196487576**\u3010London Weather & Atmospheric Statistics\u3011. This indicates a weak negative relationship between daily maximum temperature and household energy consumption.",
+      "provider": "Groq",
+      "model": "openai/gpt-oss-120b",
+      "latencies_ms": {
+        "router": 0.05,
+        "document_retrieval": 0.0,
+        "tabular_retrieval": 0.12,
+        "llm_generation": 742.07,
+        "end_to_end": 742.24
       },
       "sources": {
         "document_chunks_count": 0,
         "tabular_source": "Precomputed Metrics (weather_stats.json, consumption_stats.json)",
         "retrieved_chunks": []
       },
-      "actual_latency_ms": 1085.86
+      "actual_latency_ms": 742.25
     }
   ],
   "large_queries": [
     {
       "query": "Using the available London energy data, explain the relationship between temperature and household energy consumption, identify which season has the highest and lowest average daily consumption, compare the available tariff consumption values, and explain whether the provided data gives enough evidence to conclude that household characteristics influence energy usage.",
       "category": "hybrid",
-      "answer": "**Temperature vs. household energy use**\n\n* The dataset includes a correlation between daily maximum temperature and total daily energy consumption of **\u20110.17**\u3010London Weather & Atmospheric Statistics\u3011.  \n* This negative value indicates a weak inverse relationship: on days that are hotter, overall household electricity use tends to be slightly lower, and on colder days it tends to be slightly higher. The relationship is modest, not strong.\n\n**Seasonal average daily consumption**\n\n| Season | Avg. daily energy (kWh) | Avg. max temp (\u00b0C) | Avg. min temp (\u00b0C) |\n|--------|------------------------|--------------------|--------------------|\n| **Winter** | **11.99\u202fkWh** (highest)\u3010London Seasonal Consumption & Temperature Metrics\u3011 | 8.24 | 3.58 |\n| Spring | 10.21 | 12.49 | 5.80 |\n| Autumn | 9.97 | 14.42 | 8.45 |\n| **Summer** | **8.16\u202fkWh** (lowest)\u3010London Seasonal Consumption & Temperature Metrics\u3011 | 21.58 | 13.56 |\n\nThus, **winter has the highest average daily consumption**, while **summer has the lowest**.\n\n**Tariff\u2011level consumption comparison**\n\n| Tariff | Avg. daily energy (kWh) | Median daily energy (kWh) |\n|--------|------------------------|---------------------------|\n| **Standard (Std)** | **10.28\u202fkWh**\u3010London Tariff Performance (Std)\u3011 | 7.90 |\n| **Time\u2011of\u2011Use (ToU)** | **9.50\u202fkWh**\u3010London Tariff Performance (ToU)\u3011 | 7.50 |\n\nThe Standard tariff households consume, on average, about **0.78\u202fkWh more per day** than the Time\u2011of\u2011Use households.\n\n**Do the data show that household characteristics influence usage?**\n\n* The dataset provides demographic counts (e.g., ACORN groups, tariff distribution) and overall consumption statistics, but it **does not link individual household characteristics (such as ACORN class, income, or dwelling type) to their specific energy use**.  \n* Without a breakdown of consumption by those characteristics, we cannot test or demonstrate a causal or even correlational effect of household traits on energy usage.\n\n**Conclusion:**  \nThe available London data reveal a weak negative temperature\u2011energy correlation, clear seasonal patterns (winter highest, summer lowest), and a modest difference between Standard and ToU tariffs. However, the dataset lacks the necessary granularity to determine whether household demographic or socioeconomic characteristics drive differences in energy consumption.\u3010London Weather & Atmospheric Statistics\u3011\u3010London Seasonal Consumption & Temperature Metrics\u3011\u3010London Tariff Performance\u3011",
-      "provider": "Groq",
-      "model": "openai/gpt-oss-120b",
+      "answer": "Based on the provided London energy data, we can analyze the relationship between temperature and household energy consumption, identify the seasons with the highest and lowest average daily consumption, compare the available tariff consumption values, and assess whether the data provides enough evidence to conclude that household characteristics influence energy usage.\n\n1. **Relationship between temperature and household energy consumption**: The London Weather & Atmospheric Statistics section provides a correlation coefficient (`temp_energy_correlation`) of -0.16989304196487576 between daily maximum temperature and energy consumption. This suggests a weak negative correlation, indicating that as temperature increases, energy consumption tends to decrease (Source: London Weather & Atmospheric Statistics). This is consistent with the expectation that households tend to consume more energy for heating during colder periods and less energy during warmer periods.\n\n2. **Seasonal consumption**: The London Seasonal Consumption & Temperature Metrics section provides average daily energy consumption values for each season. The highest average daily consumption is observed in **Winter** with 11.993218648009444 kWh, while the lowest average daily consumption is observed in **Summer** with 8.16304587818129 kWh (Source: London Seasonal Consumption & Temperature Metrics).\n\n3. **Tariff consumption comparison**: The London Tariff Performance section provides a comparison of the Standard (Std) and Time-of-Use (ToU) tariffs. The average daily energy consumption for Std is 10.284679831582043 kWh, while for ToU it is 9.501246438863857 kWh (Source: London Tariff Performance). This suggests that households on the ToU tariff tend to consume slightly less energy on average compared to those on the Std tariff.\n\n4. **Household characteristics and energy usage**: The London Household & Demographic Statistics section provides information on household characteristics, such as ACORN groups and tariff distribution. However, there is no direct analysis or correlation provided between these characteristics and energy usage (Source: London Household & Demographic Statistics). While the data provides some insights into household demographics, it does not provide enough evidence to conclude that household characteristics significantly influence energy usage. Further analysis would be required to investigate this relationship.\n\nIn summary, the provided data suggests a weak negative correlation between temperature and energy consumption, with the highest average daily consumption in Winter and the lowest in Summer. The ToU tariff tends to have slightly lower average daily consumption compared to the Std tariff. However, the data does not provide sufficient evidence to conclude that household characteristics influence energy usage.",
+      "provider": "OpenRouter (Fallback)",
+      "model": "meta-llama/llama-3.3-70b-instruct",
       "latencies_ms": {
         "router": 0.04,
-        "document_retrieval": 54.49,
-        "tabular_retrieval": 0.09,
-        "llm_generation": 2299.97,
-        "end_to_end": 2354.6
+        "document_retrieval": 47.47,
+        "tabular_retrieval": 0.12,
+        "llm_generation": 8449.15,
+        "end_to_end": 8496.79
       },
       "sources": {
         "document_chunks_count": 5,
@@ -292,18 +292,18 @@
             "similarity_score": 0.5889,
             "distance": 0.4111,
             "metadata": {
-              "page": 3,
-              "moddate": "2014-10-13T11:42:16+05:30",
               "file_type": "pdf",
+              "file_name": "energy.pdf",
+              "creator": "Microsoft\u00ae Word 2010",
               "creationdate": "2014-10-13T11:42:16+05:30",
-              "title": "Paper Title (use style: paper title)",
               "total_pages": 8,
+              "producer": "Microsoft\u00ae Word 2010",
+              "title": "Paper Title (use style: paper title)",
+              "page_label": "4",
               "source": "data/raw/documents/energy.pdf",
               "author": "IEEE",
-              "file_name": "energy.pdf",
-              "page_label": "4",
-              "producer": "Microsoft\u00ae Word 2010",
-              "creator": "Microsoft\u00ae Word 2010"
+              "moddate": "2014-10-13T11:42:16+05:30",
+              "page": 3
             }
           },
           {
@@ -312,18 +312,18 @@
             "similarity_score": 0.5351,
             "distance": 0.4649,
             "metadata": {
-              "source": "data/raw/documents/energy.pdf",
-              "total_pages": 8,
-              "file_type": "pdf",
-              "creationdate": "2014-10-13T11:42:16+05:30",
-              "page": 2,
               "page_label": "3",
-              "moddate": "2014-10-13T11:42:16+05:30",
+              "author": "IEEE",
               "producer": "Microsoft\u00ae Word 2010",
+              "moddate": "2014-10-13T11:42:16+05:30",
+              "page": 2,
               "title": "Paper Title (use style: paper title)",
+              "total_pages": 8,
               "file_name": "energy.pdf",
               "creator": "Microsoft\u00ae Word 2010",
-              "author": "IEEE"
+              "creationdate": "2014-10-13T11:42:16+05:30",
+              "source": "data/raw/documents/energy.pdf",
+              "file_type": "pdf"
             }
           },
           {
@@ -332,18 +332,18 @@
             "similarity_score": 0.5041,
             "distance": 0.4959,
             "metadata": {
-              "page": 3,
-              "total_pages": 8,
-              "producer": "Microsoft\u00ae Word 2010",
               "title": "Paper Title (use style: paper title)",
+              "total_pages": 8,
+              "author": "IEEE",
               "page_label": "4",
               "file_type": "pdf",
-              "source": "data/raw/documents/energy.pdf",
-              "creator": "Microsoft\u00ae Word 2010",
-              "moddate": "2014-10-13T11:42:16+05:30",
               "file_name": "energy.pdf",
+              "moddate": "2014-10-13T11:42:16+05:30",
+              "creator": "Microsoft\u00ae Word 2010",
+              "producer": "Microsoft\u00ae Word 2010",
               "creationdate": "2014-10-13T11:42:16+05:30",
-              "author": "IEEE"
+              "source": "data/raw/documents/energy.pdf",
+              "page": 3
             }
           },
           {
@@ -352,18 +352,18 @@
             "similarity_score": 0.5016,
             "distance": 0.4984,
             "metadata": {
+              "author": "IEEE",
+              "title": "Paper Title (use style: paper title)",
+              "page_label": "5",
+              "creationdate": "2014-10-13T11:42:16+05:30",
               "producer": "Microsoft\u00ae Word 2010",
               "source": "data/raw/documents/energy.pdf",
+              "total_pages": 8,
+              "moddate": "2014-10-13T11:42:16+05:30",
+              "file_name": "energy.pdf",
               "file_type": "pdf",
               "creator": "Microsoft\u00ae Word 2010",
-              "page": 4,
-              "page_label": "5",
-              "moddate": "2014-10-13T11:42:16+05:30",
-              "total_pages": 8,
-              "author": "IEEE",
-              "file_name": "energy.pdf",
-              "creationdate": "2014-10-13T11:42:16+05:30",
-              "title": "Paper Title (use style: paper title)"
+              "page": 4
             }
           },
           {
@@ -372,36 +372,36 @@
             "similarity_score": 0.4605,
             "distance": 0.5395,
             "metadata": {
-              "file_type": "pdf",
-              "creator": "Microsoft\u00ae Word 2010",
               "page_label": "3",
-              "file_name": "energy.pdf",
-              "total_pages": 8,
-              "creationdate": "2014-10-13T11:42:16+05:30",
-              "producer": "Microsoft\u00ae Word 2010",
-              "moddate": "2014-10-13T11:42:16+05:30",
-              "page": 2,
+              "source": "data/raw/documents/energy.pdf",
               "title": "Paper Title (use style: paper title)",
+              "total_pages": 8,
+              "producer": "Microsoft\u00ae Word 2010",
+              "creationdate": "2014-10-13T11:42:16+05:30",
+              "creator": "Microsoft\u00ae Word 2010",
+              "file_name": "energy.pdf",
+              "file_type": "pdf",
               "author": "IEEE",
-              "source": "data/raw/documents/energy.pdf"
+              "moddate": "2014-10-13T11:42:16+05:30",
+              "page": 2
             }
           }
         ]
       },
-      "actual_latency_ms": 2354.62
+      "actual_latency_ms": 8496.81
     },
     {
       "query": "Analyze the available London energy dataset and explain how seasonal consumption differs between winter, spring, summer, and autumn. Include the temperature-energy correlation, compare Standard and ToU tariff consumption, and mention any household ACORN information available in the dataset. Clearly distinguish between facts directly supported by the data and conclusions that cannot be established from the available evidence.",
       "category": "hybrid",
-      "answer": "Based on the provided London energy dataset, the following analysis can be made:\n\n**Seasonal Consumption:**\nThe dataset provides information on seasonal consumption patterns in London, which are as follows:\n- Winter: Average daily energy consumption is 11.993218648009444 kWh, with a maximum daily consumption of 321.6969984000001 kWh. The average temperature ranges from 3.5797716397713084\u00b0C (min) to 8.238528351890343\u00b0C (max).\n- Spring: Average daily energy consumption is 10.206178342973692 kWh, with a maximum daily consumption of 199.8180004 kWh. The average temperature ranges from 5.7962790500864845\u00b0C (min) to 12.492471571633248\u00b0C (max).\n- Summer: Average daily energy consumption is 8.16304587818129 kWh, with a maximum daily consumption of 161.17699979999998 kWh. The average temperature ranges from 13.558173535946207\u00b0C (min) to 21.580349143412136\u00b0C (max).\n- Autumn: Average daily energy consumption is 9.974053077188522 kWh, with a maximum daily consumption of 332.5560009999998 kWh. The average temperature ranges from 8.446770677392717\u00b0C (min) to 14.422786713193576\u00b0C (max).\n\nThese values are directly supported by the data (Source: London Seasonal Consumption & Temperature Metrics).\n\n**Temperature-Energy Correlation:**\nThe temperature-energy correlation is -0.16989304196487576, indicating a weak negative correlation between temperature and energy consumption. This means that as temperature increases, energy consumption tends to decrease, and vice versa. This fact is directly supported by the data (Source: London Weather & Atmospheric Statistics).\n\n**Standard and ToU Tariff Consumption:**\nThe dataset provides information on the average daily energy consumption for Standard and ToU tariffs:\n- Standard tariff: Average daily energy consumption is 10.284679831582043 kWh, with a median daily energy consumption of 7.903000100000001 kWh.\n- ToU tariff: Average daily energy consumption is 9.501246438863857 kWh, with a median daily energy consumption of 7.501999999999999 kWh.\n\nThese values are directly supported by the data (Source: London Tariff Performance).\n\n**Household ACORN Information:**\nThe dataset provides information on the average daily energy consumption for different ACORN groups:\n- ACORN-: Average daily energy consumption is 12.003773363636364 kWh.\n- ACORN-U: Average daily energy consumption is 11.622462424804946 kWh.\n- Adversity: Average daily energy consumption is 8.505913062438895 kWh.\n- Affluent: Average daily energy consumption is 11.481609321429502 kWh.\n- Comfortable: Average daily energy consumption is 10.007593041041535 kWh.\n\nThese values are directly supported by the data (Source: London ACORN Demographic Group Breakdown).\n\n**Conclusions and Limitations:**\nWhile the data provides insights into seasonal consumption patterns, temperature-energy correlation, and tariff consumption, it is essential to note that the dataset may not capture all factors influencing energy consumption. For example, the data does not account for factors like household size, income, or behavioral patterns, which can significantly impact energy consumption. Therefore, any conclusions drawn from this analysis should be considered in the context of the available data and may not be generalizable to other populations or regions.\n\nIn conclusion, the analysis of the London energy dataset reveals distinct seasonal consumption patterns, with winter having the highest average daily energy consumption and summer having the lowest. The temperature-energy correlation is weakly negative, indicating that energy consumption tends to decrease as temperature increases. The Standard and ToU tariffs exhibit different average daily energy consumption patterns, with the Standard tariff having a higher average consumption. The ACORN group breakdown provides insights into the energy consumption patterns of different demographic groups. However, it is crucial to recognize the limitations of the dataset and avoid drawing conclusions that cannot be supported by the available evidence.",
+      "answer": "Analyzing the London energy dataset, we can observe the following facts about seasonal consumption:\n\n1. **Seasonal Consumption**: The dataset provides average daily energy consumption for each season: \n   - Winter: 11.993218648009444 kWh\n   - Spring: 10.206178342973692 kWh\n   - Summer: 8.16304587818129 kWh\n   - Autumn: 9.974053077188522 kWh\n   (Source: London Seasonal Consumption & Temperature Metrics)\n\n2. **Temperature-Energy Correlation**: The temperature-energy correlation is -0.16989304196487576, indicating a negative correlation between daily maximum temperature and energy consumption.\n   (Source: London Weather & Atmospheric Statistics)\n\n3. **Standard and ToU Tariff Consumption**: The dataset provides average daily energy consumption for Standard and ToU tariffs:\n   - Standard: 10.284679831582043 kWh\n   - ToU: 9.501246438863857 kWh\n   (Source: London Tariff Performance)\n\n4. **Household ACORN Information**: The dataset provides information about household demographics, including ACORN groups. For example, the average daily energy consumption varies across different ACORN groups:\n   - ACORN-A: 19.07018910630998 kWh\n   - ACORN-B: 11.909066997902437 kWh\n   - ACORN-C: 11.954172500620217 kWh\n   (Source: London ACORN Demographic Group Breakdown)\n\nFrom these facts, we can conclude that:\n\n- Energy consumption is highest in winter and lowest in summer, which is consistent with the typical heating and cooling patterns in the UK.\n- The negative temperature-energy correlation suggests that higher temperatures are associated with lower energy consumption, which could be due to reduced heating demand.\n- The difference in average daily energy consumption between Standard and ToU tariffs may indicate that ToU tariffs are more effective in reducing energy consumption.\n\nHowever, we cannot establish the following conclusions from the available evidence:\n\n- The causal relationship between temperature and energy consumption, as the correlation does not necessarily imply causation.\n- The effectiveness of ToU tariffs in reducing energy consumption, as the difference in average daily energy consumption between Standard and ToU tariffs may be influenced by other factors, such as household demographics or behavior.\n- The impact of ACORN groups on energy consumption, as the dataset only provides average daily energy consumption for each ACORN group, without controlling for other factors that may influence energy consumption.\n\nIn summary, while the dataset provides valuable insights into seasonal consumption patterns, temperature-energy correlation, and tariff performance, it is essential to distinguish between facts directly supported by the data and conclusions that require additional evidence or analysis.",
       "provider": "OpenRouter (Fallback)",
       "model": "meta-llama/llama-3.3-70b-instruct",
       "latencies_ms": {
-        "router": 0.07,
-        "document_retrieval": 51.66,
+        "router": 0.03,
+        "document_retrieval": 43.86,
         "tabular_retrieval": 0.14,
-        "llm_generation": 18341.88,
-        "end_to_end": 18393.77
+        "llm_generation": 32612.76,
+        "end_to_end": 32656.81
       },
       "sources": {
         "document_chunks_count": 5,
@@ -413,18 +413,18 @@
             "similarity_score": 0.524,
             "distance": 0.476,
             "metadata": {
-              "author": "IEEE",
-              "total_pages": 8,
-              "file_type": "pdf",
               "title": "Paper Title (use style: paper title)",
-              "producer": "Microsoft\u00ae Word 2010",
-              "source": "data/raw/documents/energy.pdf",
-              "creator": "Microsoft\u00ae Word 2010",
-              "file_name": "energy.pdf",
               "moddate": "2014-10-13T11:42:16+05:30",
+              "file_type": "pdf",
               "creationdate": "2014-10-13T11:42:16+05:30",
+              "creator": "Microsoft\u00ae Word 2010",
+              "total_pages": 8,
               "page_label": "4",
-              "page": 3
+              "page": 3,
+              "producer": "Microsoft\u00ae Word 2010",
+              "author": "IEEE",
+              "file_name": "energy.pdf",
+              "source": "data/raw/documents/energy.pdf"
             }
           },
           {
@@ -433,18 +433,18 @@
             "similarity_score": 0.5002,
             "distance": 0.4998,
             "metadata": {
-              "author": "IEEE",
-              "page": 2,
-              "file_type": "pdf",
-              "title": "Paper Title (use style: paper title)",
-              "creator": "Microsoft\u00ae Word 2010",
-              "producer": "Microsoft\u00ae Word 2010",
+              "moddate": "2014-10-13T11:42:16+05:30",
               "creationdate": "2014-10-13T11:42:16+05:30",
               "page_label": "3",
-              "source": "data/raw/documents/energy.pdf",
               "total_pages": 8,
-              "moddate": "2014-10-13T11:42:16+05:30",
-              "file_name": "energy.pdf"
+              "creator": "Microsoft\u00ae Word 2010",
+              "source": "data/raw/documents/energy.pdf",
+              "title": "Paper Title (use style: paper title)",
+              "author": "IEEE",
+              "file_name": "energy.pdf",
+              "file_type": "pdf",
+              "page": 2,
+              "producer": "Microsoft\u00ae Word 2010"
             }
           },
           {
@@ -453,18 +453,18 @@
             "similarity_score": 0.4823,
             "distance": 0.5177,
             "metadata": {
-              "page": 3,
-              "file_name": "energy.pdf",
-              "author": "IEEE",
-              "title": "Paper Title (use style: paper title)",
-              "creator": "Microsoft\u00ae Word 2010",
               "producer": "Microsoft\u00ae Word 2010",
-              "creationdate": "2014-10-13T11:42:16+05:30",
+              "title": "Paper Title (use style: paper title)",
+              "file_name": "energy.pdf",
               "page_label": "4",
+              "creationdate": "2014-10-13T11:42:16+05:30",
+              "source": "data/raw/documents/energy.pdf",
               "total_pages": 8,
-              "file_type": "pdf",
+              "creator": "Microsoft\u00ae Word 2010",
+              "page": 3,
+              "author": "IEEE",
               "moddate": "2014-10-13T11:42:16+05:30",
-              "source": "data/raw/documents/energy.pdf"
+              "file_type": "pdf"
             }
           },
           {
@@ -473,18 +473,18 @@
             "similarity_score": 0.4344,
             "distance": 0.5656,
             "metadata": {
-              "page": 4,
-              "title": "Paper Title (use style: paper title)",
               "creator": "Microsoft\u00ae Word 2010",
-              "source": "data/raw/documents/energy.pdf",
-              "file_type": "pdf",
               "page_label": "5",
-              "creationdate": "2014-10-13T11:42:16+05:30",
-              "producer": "Microsoft\u00ae Word 2010",
-              "author": "IEEE",
-              "file_name": "energy.pdf",
               "total_pages": 8,
-              "moddate": "2014-10-13T11:42:16+05:30"
+              "file_type": "pdf",
+              "file_name": "energy.pdf",
+              "title": "Paper Title (use style: paper title)",
+              "source": "data/raw/documents/energy.pdf",
+              "producer": "Microsoft\u00ae Word 2010",
+              "creationdate": "2014-10-13T11:42:16+05:30",
+              "moddate": "2014-10-13T11:42:16+05:30",
+              "page": 4,
+              "author": "IEEE"
             }
           },
           {
@@ -493,36 +493,36 @@
             "similarity_score": 0.4341,
             "distance": 0.5659,
             "metadata": {
+              "total_pages": 8,
+              "moddate": "2014-10-13T11:42:16+05:30",
+              "creator": "Microsoft\u00ae Word 2010",
               "page": 4,
               "file_type": "pdf",
-              "total_pages": 8,
+              "source": "data/raw/documents/energy.pdf",
               "author": "IEEE",
-              "page_label": "5",
-              "creator": "Microsoft\u00ae Word 2010",
+              "creationdate": "2014-10-13T11:42:16+05:30",
+              "title": "Paper Title (use style: paper title)",
               "producer": "Microsoft\u00ae Word 2010",
               "file_name": "energy.pdf",
-              "title": "Paper Title (use style: paper title)",
-              "source": "data/raw/documents/energy.pdf",
-              "creationdate": "2014-10-13T11:42:16+05:30",
-              "moddate": "2014-10-13T11:42:16+05:30"
+              "page_label": "5"
             }
           }
         ]
       },
-      "actual_latency_ms": 18393.79
+      "actual_latency_ms": 32656.83
     },
     {
       "query": "Based only on the available data and documents, provide a comprehensive analysis of London's household energy consumption patterns, including seasonal trends, temperature relationship, tariff differences, household characteristics, and supporting document evidence. Do not introduce external facts or predictions.",
       "category": "hybrid",
-      "answer": "**London Household Energy Consumption \u2013 Evidence\u2011Based Overview**\n\n| Aspect | Key Findings (from the dataset) | Supporting Evidence |\n|--------|----------------------------------|---------------------|\n| **Overall city\u2011wide consumption** | \u2022 Total of 3\u202f517\u202f032 daily records (\u2248 9.6\u202fyears of data).  <br>\u2022 Aggregate energy use = **35\u202f617\u202f099\u202fkWh**.  <br>\u2022 Daily mean = **10.13\u202fkWh** per household, median = **7.82\u202fkWh**, standard deviation = **9.13\u202fkWh**.  <br>\u2022 Extreme values: minimum 0\u202fkWh, maximum 332.56\u202fkWh.  <br>\u2022 Percentiles: 25\u202f%\u202f=\u202f4.68\u202fkWh, 50\u202f%\u202f=\u202f7.82\u202fkWh, 75\u202f%\u202f=\u202f12.57\u202fkWh, 90\u202f%\u202f=\u202f19.42\u202fkWh, 99\u202f%\u202f=\u202f45.78\u202fkWh. | \u201cLondon Citywide Consumption Metrics & Percentiles\u201d (tabular data) |\n| **Seasonal trends** | \u2022 **Winter**: highest average daily use \u2013 **11.99\u202fkWh** (recorded max 321.70\u202fkWh).  <br>\u2022 **Spring**: average **10.21\u202fkWh** (max 199.82\u202fkWh).  <br>\u2022 **Autumn**: average **9.97\u202fkWh** (max 332.56\u202fkWh).  <br>\u2022 **Summer**: lowest average \u2013 **8.16\u202fkWh** (max 161.18\u202fkWh).  <br>These figures show a clear seasonal pattern: consumption peaks in the coldest months and falls in the warmest months. | \u201cLondon Seasonal Consumption & Temperature Metrics\u201d |\n| **Temperature relationship** | \u2022 Correlation between daily maximum temperature and energy consumption = **\u20110.17**.  <br>\u2022 The negative sign confirms that higher temperatures are associated with lower electricity use (likely because heating demand drops).  <br>\u2022 Mean maximum temperature across the whole period = **13.69\u202f\u00b0C**; mean minimum = **7.47\u202f\u00b0C**. | \u201cLondon Weather & Atmospheric Statistics \u2013 temp_energy_correlation\u201d |\n| **Tariff\u2011type performance (Standard vs. Time\u2011of\u2011Use)** | \u2022 **Standard (Std)** tariff: average daily consumption **10.28\u202fkWh**, median **7.90\u202fkWh**, standard deviation **9.37\u202fkWh**, max **332.56\u202fkWh** (2\u202f443\u202f679 records).  <br>\u2022 **Time\u2011of\u2011Use (ToU)** tariff: average daily consumption **9.50\u202fkWh**, median **7.50\u202fkWh**, standard deviation **8.08\u202fkWh**, max **176.02\u202fkWh** (707\u202f323 records).  <br>\u2022 On average, ToU customers use about **0.78\u202fkWh** less per day (\u2248\u202f7\u202f% lower) and exhibit slightly less variability than Std customers. | \u201cLondon Tariff Performance (Std vs ToU)\u201d |\n| **Household\u2011level characteristics** | \u2022 Total households in the sample: **5\u202f566**.  <br>\u2022 Tariff distribution: **4\u202f443** Std (\u2248\u202f80\u202f%) and **1\u202f123** ToU (\u2248\u202f20\u202f%).  <br>\u2022 Socio\u2011economic (ACORN) breakdown shows a spread across 20 groups, with the largest counts in **Affluent (2\u202f192)**, **Adversity (1\u202f816)** and **Comfortable (1\u202f507)**.  <br>\u2022 Mean daily energy per household (overall) = **10.18\u202fkWh**; maximum observed daily per\u2011household consumption = **332.56\u202fkWh**; minimum = **",
+      "answer": "**London Household Energy Consumption \u2013 Evidence\u2011Based Overview**\n\n| Aspect | Key Findings (from the London Smart\u2011Meter dataset) | Supporting Evidence |\n|--------|----------------------------------------------------|----------------------|\n| **Overall daily use** | \u2022 Mean daily consumption per household = **10.18\u202fkWh**.<br>\u2022 Median = **7.82\u202fkWh**.<br>\u2022 Wide spread (std\u202f\u2248\u202f9.13\u202fkWh) with a minimum of **0\u202fkWh** and a maximum of **332.56\u202fkWh** on a single day. | City\u2011wide metrics table \u2013 \u201cmean_daily_per_household_kwh\u201d, \u201cdaily_median_kwh\u201d, \u201cdaily_std_kwh\u201d, \u201cdaily_min_kwh\u201d, \u201cdaily_max_kwh\u201d\u3010tabular\u3011 |\n| **Seasonal trends** | \u2022 **Winter**: highest average daily use \u2013 **11.99\u202fkWh** (\u2248\u202f20\u202f% above the overall mean).<br>\u2022 **Spring**: average **10.21\u202fkWh** (close to the overall mean).<br>\u2022 **Summer**: lowest average \u2013 **8.16\u202fkWh** (\u2248\u202f20\u202f% below the overall mean).<br>\u2022 **Autumn**: average **9.97\u202fkWh** (slightly below the overall mean). | Seasonal metrics table \u2013 \u201cWinter\u201d, \u201cSpring\u201d, \u201cSummer\u201d, \u201cAutumn\u201d average daily energy values\u3010tabular\u3011 |\n| **Temperature relationship** | \u2022 Correlation between daily maximum temperature and energy consumption = **\u20110.17** (weak negative).<br>\u2022 As temperatures rise (e.g., summer max\u202f\u2248\u202f21.6\u202f\u00b0C), consumption falls; as temperatures drop (winter max\u202f\u2248\u202f8.2\u202f\u00b0C), consumption rises. | Weather\u2011energy correlation value \u201ctemp_energy_correlation\u201d = \u20130.16989304196487576\u3010tabular\u3011 |\n| **Tariff performance (Standard vs. Time\u2011of\u2011Use)** | \u2022 **Standard (Std)** tariff: average daily use **10.28\u202fkWh**, median **7.90\u202fkWh**, max **332.56\u202fkWh**.<br>\u2022 **Time\u2011of\u2011Use (ToU)** tariff: average daily use **9.50\u202fkWh**, median **7.50\u202fkWh**, max **176.02\u202fkWh**.<br>\u2022 Std households consume slightly more on average and exhibit a higher maximum, suggesting that the ToU pricing may encourage modest reductions in peak demand. | London Tariff Performance table \u2013 \u201cStd\u201d vs \u201cToU\u201d metrics\u3010tabular\u3011 |\n| **Household characteristics** | \u2022 Total households in the sample: **5,566**.<br>\u2022 Tariff distribution: **4,443 Std** (\u2248\u202f80\u202f%) and **1,123 ToU** (\u2248\u202f20\u202f%).<br>\u2022 Socio\u2011economic (ACORN) breakdown shows a large share in the **Affluent (2,192)** and **Adversity (1,816)** groups, with representation across all ACORN categories.<br>\u2022 Mean daily per\u2011household consumption (10.18\u202fkWh) aligns closely with the overall city mean (10.13\u202fkWh).<br>\u2022 The five households with the highest average daily consumption range from **70.97\u202fkWh** to **101.09\u202fkWh**, far above the city median, indicating a small tail of heavy users. | Household & demographic statistics (total_households, tariff_distribution, acorn_grouped_distribution, household_daily_energy_summary)\u3010tabular\u3011; Top\u20115 highest\u2011consuming households list\u3010tabular\u3011 |\n| **Behavioural & technological context** | \u2022 The documents stress that **energy\u2011conservation efforts need more than information**; practical, real\u2011time feedback (e.g., smart meters) is highlighted as a way to make savings \u201ceasy and lasting\u201d.<br>\u2022 Examples of real\u2011time metering solutions (Energy Detective, Eniscope, Ecowizard, Paladin Live) illustrate",
       "provider": "Groq",
       "model": "openai/gpt-oss-120b",
       "latencies_ms": {
-        "router": 0.03,
-        "document_retrieval": 64.15,
-        "tabular_retrieval": 0.1,
-        "llm_generation": 2679.96,
-        "end_to_end": 2744.26
+        "router": 0.04,
+        "document_retrieval": 52.29,
+        "tabular_retrieval": 0.11,
+        "llm_generation": 3565.23,
+        "end_to_end": 3617.69
       },
       "sources": {
         "document_chunks_count": 5,
@@ -534,18 +534,18 @@
             "similarity_score": 0.5374,
             "distance": 0.4626,
             "metadata": {
-              "moddate": "2014-10-13T11:42:16+05:30",
-              "title": "Paper Title (use style: paper title)",
-              "file_type": "pdf",
-              "source": "data/raw/documents/energy.pdf",
-              "creationdate": "2014-10-13T11:42:16+05:30",
-              "producer": "Microsoft\u00ae Word 2010",
-              "file_name": "energy.pdf",
               "total_pages": 8,
-              "page_label": "3",
+              "producer": "Microsoft\u00ae Word 2010",
+              "title": "Paper Title (use style: paper title)",
+              "source": "data/raw/documents/energy.pdf",
               "page": 2,
+              "file_name": "energy.pdf",
+              "file_type": "pdf",
+              "creationdate": "2014-10-13T11:42:16+05:30",
+              "page_label": "3",
               "creator": "Microsoft\u00ae Word 2010",
-              "author": "IEEE"
+              "author": "IEEE",
+              "moddate": "2014-10-13T11:42:16+05:30"
             }
           },
           {
@@ -554,18 +554,18 @@
             "similarity_score": 0.5362,
             "distance": 0.4638,
             "metadata": {
-              "creationdate": "2014-10-13T11:42:16+05:30",
-              "title": "Paper Title (use style: paper title)",
               "file_name": "energy.pdf",
-              "page_label": "4",
-              "file_type": "pdf",
-              "creator": "Microsoft\u00ae Word 2010",
-              "author": "IEEE",
-              "page": 3,
-              "source": "data/raw/documents/energy.pdf",
-              "moddate": "2014-10-13T11:42:16+05:30",
               "producer": "Microsoft\u00ae Word 2010",
-              "total_pages": 8
+              "page_label": "4",
+              "title": "Paper Title (use style: paper title)",
+              "creator": "Microsoft\u00ae Word 2010",
+              "moddate": "2014-10-13T11:42:16+05:30",
+              "page": 3,
+              "author": "IEEE",
+              "total_pages": 8,
+              "file_type": "pdf",
+              "creationdate": "2014-10-13T11:42:16+05:30",
+              "source": "data/raw/documents/energy.pdf"
             }
           },
           {
@@ -574,18 +574,18 @@
             "similarity_score": 0.5221,
             "distance": 0.4779,
             "metadata": {
-              "moddate": "2014-10-13T11:42:16+05:30",
-              "page": 4,
-              "source": "data/raw/documents/energy.pdf",
-              "creator": "Microsoft\u00ae Word 2010",
-              "page_label": "5",
-              "title": "Paper Title (use style: paper title)",
               "file_name": "energy.pdf",
-              "file_type": "pdf",
-              "creationdate": "2014-10-13T11:42:16+05:30",
+              "page": 4,
               "producer": "Microsoft\u00ae Word 2010",
               "author": "IEEE",
-              "total_pages": 8
+              "creator": "Microsoft\u00ae Word 2010",
+              "file_type": "pdf",
+              "title": "Paper Title (use style: paper title)",
+              "moddate": "2014-10-13T11:42:16+05:30",
+              "page_label": "5",
+              "total_pages": 8,
+              "creationdate": "2014-10-13T11:42:16+05:30",
+              "source": "data/raw/documents/energy.pdf"
             }
           },
           {
@@ -594,18 +594,18 @@
             "similarity_score": 0.4713,
             "distance": 0.5287,
             "metadata": {
-              "producer": "Microsoft\u00ae Word 2010",
-              "creator": "Microsoft\u00ae Word 2010",
-              "moddate": "2014-10-13T11:42:16+05:30",
-              "page": 4,
-              "total_pages": 8,
-              "creationdate": "2014-10-13T11:42:16+05:30",
-              "file_name": "energy.pdf",
-              "page_label": "5",
               "author": "IEEE",
-              "title": "Paper Title (use style: paper title)",
+              "moddate": "2014-10-13T11:42:16+05:30",
               "file_type": "pdf",
-              "source": "data/raw/documents/energy.pdf"
+              "page_label": "5",
+              "creationdate": "2014-10-13T11:42:16+05:30",
+              "page": 4,
+              "producer": "Microsoft\u00ae Word 2010",
+              "file_name": "energy.pdf",
+              "source": "data/raw/documents/energy.pdf",
+              "title": "Paper Title (use style: paper title)",
+              "total_pages": 8,
+              "creator": "Microsoft\u00ae Word 2010"
             }
           },
           {
@@ -614,45 +614,45 @@
             "similarity_score": 0.4541,
             "distance": 0.5459,
             "metadata": {
-              "creationdate": "2014-10-13T11:42:16+05:30",
-              "moddate": "2014-10-13T11:42:16+05:30",
-              "author": "IEEE",
-              "page": 4,
-              "page_label": "5",
+              "creator": "Microsoft\u00ae Word 2010",
               "title": "Paper Title (use style: paper title)",
               "total_pages": 8,
-              "creator": "Microsoft\u00ae Word 2010",
-              "producer": "Microsoft\u00ae Word 2010",
               "file_name": "energy.pdf",
               "file_type": "pdf",
+              "producer": "Microsoft\u00ae Word 2010",
+              "page_label": "5",
+              "author": "IEEE",
+              "creationdate": "2014-10-13T11:42:16+05:30",
+              "moddate": "2014-10-13T11:42:16+05:30",
+              "page": 4,
               "source": "data/raw/documents/energy.pdf"
             }
           }
         ]
       },
-      "actual_latency_ms": 2744.31
+      "actual_latency_ms": 3617.71
     }
   ],
   "anti_hallucination": [
     {
       "query": "What will London's electricity consumption be tomorrow?",
       "category": "consumption",
-      "answer": "I don't have enough information in the available data.",
-      "provider": "OpenRouter (Fallback)",
-      "model": "meta-llama/llama-3.3-70b-instruct",
+      "answer": "I don't have enough information in the available data. \u3010London Citywide Consumption Metrics & Percentiles\u3011",
+      "provider": "Groq",
+      "model": "openai/gpt-oss-120b",
       "latencies_ms": {
-        "router": 0.05,
+        "router": 0.04,
         "document_retrieval": 0.0,
-        "tabular_retrieval": 0.13,
-        "llm_generation": 7326.0,
-        "end_to_end": 7326.2
+        "tabular_retrieval": 0.09,
+        "llm_generation": 590.36,
+        "end_to_end": 590.49
       },
       "sources": {
         "document_chunks_count": 0,
         "tabular_source": "Precomputed Metrics (consumption_stats.json)",
         "retrieved_chunks": []
       },
-      "actual_latency_ms": 7326.21
+      "actual_latency_ms": 590.51
     },
     {
       "query": "What is the electricity price per kWh tomorrow?",
@@ -663,36 +663,36 @@
       "latencies_ms": {
         "router": 0.04,
         "document_retrieval": 0.0,
-        "tabular_retrieval": 0.12,
-        "llm_generation": 667.64,
-        "end_to_end": 667.81
+        "tabular_retrieval": 0.11,
+        "llm_generation": 704.21,
+        "end_to_end": 704.38
       },
       "sources": {
         "document_chunks_count": 0,
         "tabular_source": "Precomputed Metrics (consumption_stats.json)",
         "retrieved_chunks": []
       },
-      "actual_latency_ms": 667.82
+      "actual_latency_ms": 704.39
     },
     {
       "query": "How much energy will each household consume next year?",
       "category": "household",
       "answer": "I don't have enough information in the available data.",
-      "provider": "OpenRouter (Fallback)",
-      "model": "meta-llama/llama-3.3-70b-instruct",
+      "provider": "Groq",
+      "model": "openai/gpt-oss-120b",
       "latencies_ms": {
-        "router": 0.05,
+        "router": 0.04,
         "document_retrieval": 0.0,
-        "tabular_retrieval": 0.17,
-        "llm_generation": 2141.79,
-        "end_to_end": 2142.03
+        "tabular_retrieval": 0.12,
+        "llm_generation": 1260.22,
+        "end_to_end": 1260.39
       },
       "sources": {
         "document_chunks_count": 0,
         "tabular_source": "Precomputed Metrics (household_stats.json, consumption_stats.json)",
         "retrieved_chunks": []
       },
-      "actual_latency_ms": 2142.04
+      "actual_latency_ms": 1260.4
     },
     {
       "query": "What will the weather be in London next month?",
@@ -704,35 +704,35 @@
         "router": 0.05,
         "document_retrieval": 0.0,
         "tabular_retrieval": 0.15,
-        "llm_generation": 774.83,
-        "end_to_end": 775.03
+        "llm_generation": 534.47,
+        "end_to_end": 534.68
       },
       "sources": {
         "document_chunks_count": 0,
         "tabular_source": "Precomputed Metrics (weather_stats.json, seasonal_stats.json)",
         "retrieved_chunks": []
       },
-      "actual_latency_ms": 775.04
+      "actual_latency_ms": 534.69
     },
     {
       "query": "Who will have the highest electricity consumption tomorrow?",
       "category": "consumption",
-      "answer": "I don't have enough information in the available data. \u3010source: London Citywide Consumption Metrics & Percentiles\u3011",
+      "answer": "I don't have enough information in the available data.",
       "provider": "Groq",
       "model": "openai/gpt-oss-120b",
       "latencies_ms": {
-        "router": 0.06,
+        "router": 0.04,
         "document_retrieval": 0.0,
-        "tabular_retrieval": 0.11,
-        "llm_generation": 1296.57,
-        "end_to_end": 1296.75
+        "tabular_retrieval": 0.09,
+        "llm_generation": 677.24,
+        "end_to_end": 677.37
       },
       "sources": {
         "document_chunks_count": 0,
         "tabular_source": "Precomputed Metrics (consumption_stats.json)",
         "retrieved_chunks": []
       },
-      "actual_latency_ms": 1296.76
+      "actual_latency_ms": 677.38
     }
   ],
   "router": [
@@ -770,7 +770,7 @@
   "tabular": {
     "consumption": {
       "status": "PASS",
-      "latency_ms": 0.07
+      "latency_ms": 0.08
     }
   }
 }
