@@ -12,21 +12,27 @@ KEYWORDS = {
         "energy conservation", "lighting", "hvac", "air conditioner", 
         "refrigerator", "computer", "microwave", "industrial energy", 
         "energy saving", "paper", "author", "chair", "research", 
-        "abstract", "jetir", "insulation", "tips", "sensor"
+        "abstract", "jetir", "insulation", "tips", "sensor",
+        "appliance", "efficiency guide", "methods for energy conservation"
     ],
     "weather": [
-        "temperature", "humidity", "rain", "wind", "weather", 
-        "climate", "precipitation", "overcast", "dew", "pressure", 
-        "snow", "cloud", "darksky"
+        "temperature", "humidity", "rain", "rainy", "wind", "weather",
+        "climate", "precipitation", "overcast", "dew", "pressure",
+        "snow", "cloud", "darksky", "temp", "cold", "hot", "warm"
     ],
     "household": [
-        "household", "acorn", "tariff", "consumer", "customer", 
-        "tou", "std", "lclid", "demographic", "cluster"
+        "household", "acorn", "tariff", "tariffs", "consumer", "customer",
+        "tou", "std", "lclid", "demographic", "cluster", "affluent",
+        "adversity", "comfortable", "time-of-use", "standard tariff"
     ],
     "consumption": [
         "energy consumption", "electricity usage", "power usage", 
         "peak usage", "daily consumption", "kwh", "kw", "median", 
-        "total energy", "aggregate", "trend", "usage", "maximum energy"
+        "total energy", "aggregate", "trend", "usage", "maximum energy",
+        "consumption", "electricity", "power", "energy usage", "daily energy",
+        "average energy", "max energy", "min energy", "percentile",
+        "season", "seasonal", "winter", "summer", "spring", "autumn",
+        "holiday", "bank holiday", "christmas", "new year", "boxing day", "easter"
     ]
 }
 
